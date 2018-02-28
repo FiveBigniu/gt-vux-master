@@ -7,7 +7,7 @@
 			placement="left"
 			:drawer-style="{'background-color':'#35495e', width: '200px'}">
 			<view-box ref="viewBox">
-				<div class="search-wrap">搜索</div>
+				<!--<div class="search-wrap">搜索</div>-->
 				<div class="swipe-wrap">
 					<swiper :list="swipeList" :show-desc-mask="false" :auto="true" :loop="true"></swiper>
 				</div>
