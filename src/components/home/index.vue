@@ -7,6 +7,8 @@
 			placement="left"
 			:drawer-style="{'background-color':'#35495e', width: '200px'}">
 			<view-box ref="viewBox">
+<search @on-submit="onSubmit" :auto-fixed="autoFixed" @on-focus="onFocus" @on-cancel="onCancel"></search>
+
 				<!--<div class="search-wrap">搜索</div>-->
 				<div class="swipe-wrap">
 					<swiper :list="swipeList" :show-desc-mask="false" :auto="true" :loop="true"></swiper>
@@ -300,7 +302,7 @@
 	import heads from '@/components/header/header.vue';
 	import staticData from '@/components/static/data.js';
 	import router from '../../router/index.js';
-	import { Drawer,ViewBox,Swiper,SwiperItem , Grid, GridItem,Tab,TabItem,TransferDom, Popup,Checker,CheckerItem,ToastPlugin,Card,Divider,XButton,Flexbox,FlexboxItem,XImg } from 'vux'
+	import { Search,Drawer,ViewBox,Swiper,SwiperItem , Grid, GridItem,Tab,TabItem,TransferDom, Popup,Checker,CheckerItem,ToastPlugin,Card,Divider,XButton,Flexbox,FlexboxItem,XImg } from 'vux'
 //	Vue.use(AjaxPlugin);
 	export default {
 		name: 'subapp',
@@ -323,11 +325,12 @@
 				imgPlaceHolder:'http://greattone.oss-cn-shanghai.aliyuncs.com/images/placeholder.png?x-oss-process=style/pc-userpic',
 				swipeList:[],//主轮播图列表
 				subGuang:false, //音乐广场列表下子列表显示
-				guangList:[]
+				guangList:[],
+				value:'test'
 			}
 		},
 		components:{
-			foot,heads, Drawer, ViewBox,Swiper,SwiperItem, Grid, GridItem,Tab,TabItem, Popup,Checker,CheckerItem,ToastPlugin,Card,Divider,XButton,Flexbox,FlexboxItem,XImg
+			Search,foot,heads, Drawer, ViewBox,Swiper,SwiperItem, Grid, GridItem,Tab,TabItem, Popup,Checker,CheckerItem,ToastPlugin,Card,Divider,XButton,Flexbox,FlexboxItem,XImg
 		},
 		methods:{
 			hasLogin(){
